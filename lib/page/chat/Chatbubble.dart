@@ -66,7 +66,7 @@ class Chatbuble extends StatelessWidget {
                 ),
                 SizedBox(width: 10,),
 
-                 SvgPicture.asset(AssetsImage1.boyPic,width: 20,)
+                 SvgPicture.asset(AssetsImage1.boyicon,width: 20,)
               ],)
                 ],
               )

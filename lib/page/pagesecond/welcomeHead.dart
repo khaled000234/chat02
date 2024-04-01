@@ -11,7 +11,7 @@ class WelcomHea extends StatelessWidget {
        Row(
                  mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                 Image.asset(AssetsImage1.appI, width: 100,height: 100,
+                 Image.asset(AssetsImage1.appIcon, width: 100,height: 100,
                 // color: Theme.of(context).colorScheme.onBackground
                  ),
                         // SvgPicture.asset(AssetsImage1.appIconSVG,

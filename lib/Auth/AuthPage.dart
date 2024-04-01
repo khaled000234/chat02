@@ -29,7 +29,7 @@ class _AuthPageState extends State<AuthPage> {
               
       
       //  WelcomHea(),
-              Center(child: Image.asset(AssetsImage1.appIconSVG,width: 100,height: 100,),),
+              Center(child: Image.asset(AssetsImage1.appIcon,width: 100,height: 100,),),
 
                 SizedBox(height: 20,),
                 AuthPageBody()

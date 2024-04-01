@@ -15,7 +15,7 @@ class SplacePage extends StatelessWidget {
       //   title: Text("Splace Screen",style: Theme.of(context).textTheme.headlineSmall,)
       // ),
       body: Center(
-        child: SvgPicture.asset(AssetsImage1.appIconSVG),
+        child: SvgPicture.asset(AssetsImage1.appIcon),
       ),
     );
   }

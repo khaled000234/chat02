@@ -10,7 +10,7 @@ import 'package:chat02/page/chat/chatPage.dart';
 import 'package:chat02/page/pagesecond/LoginForm.dart';
 import 'package:chat02/page/pagesecond/LoginuserInfo.dart';
 import 'package:chat02/page/pagesecond/singupForm.dart';
-import 'package:chat02/page/pagesecond/test.dart';
+
 import 'package:chat02/page/pagesecond/updateProfile.dart';
 import 'package:chat02/page/pagesecond/welcomeHead.dart';
 import 'package:chat02/page/profilePage.dart';
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       
       
-      home:LoginUserInfo()
+      home:HomePage()
     );
   }
 }

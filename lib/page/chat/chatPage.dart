@@ -14,7 +14,7 @@ class ChatPage extends StatelessWidget {
         
         title:  Row(
         children: [
-          Image.asset(AssetsImage1.boyPic, width: 50,),
+          Image.asset(AssetsImage1.boyicon, width: 50,),
           SizedBox(width: 10,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,8 +67,8 @@ class ChatPage extends StatelessWidget {
                 Container(
                   width: 30,
                   height: 30,
-                   child: Image.asset("asset/icon/Gallery.jpg", width: 25,),
-                 // child: SvgPicture.asset(AssetsImage1.GallerySVG,width: 25,),
+                   
+                 child: SvgPicture.asset(AssetsImage1.gallerySVG,width: 25,),
                  // SvgPicture.asset(AssetsImage1.sendSVG),
                 ),
                  Container(
@@ -76,7 +76,7 @@ class ChatPage extends StatelessWidget {
                   width: 30,
                   height: 30,
                   //child: Image.asset("asset/icon/send.png", width: 25,), 
-                  child: SvgPicture.asset(AssetsImage1.sendSVG,width: 25,),
+                  child: SvgPicture.asset(AssetsImage1.SendSVG,width: 25,),
                   
                   
                 )

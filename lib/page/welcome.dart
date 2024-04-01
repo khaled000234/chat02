@@ -22,7 +22,7 @@ class Welcome extends StatelessWidget {
             ),
             SizedBox(height: 10,),
             Row(children: [
-              SvgPicture.asset(AssetsImage1.appIconSVG,width: 50,height: 50,)
+              SvgPicture.asset(AssetsImage1.appIcon,width: 50,height: 50,)
             ],)
           
           ],),

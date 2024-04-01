@@ -15,27 +15,27 @@ class ChatList extends StatelessWidget {
            Get.toNamed("/ChatPage");
         },
         child: ChatTile(
-          imageUrl:AssetsImage1.boyPic,
+          imageUrl:AssetsImage1.boyicon,
         name: "ssa",
         lastChat: "bad me bat krte hai",
         lastTime: "09:23 PM",
         ),
       ),
           ChatTile(
-            imageUrl:AssetsImage1.boyPic,
+            imageUrl:AssetsImage1.boyicon,
       name: "khaled",
       lastChat: "mvlkm dlksv LK",
       lastTime: "09:23 PM",
       ),
           ChatTile(
-            imageUrl:AssetsImage1.boyPic,
+            imageUrl:AssetsImage1.boyicon,
       name: "khaled",
       lastChat: "mvlkm dlksv LK",
       lastTime: "09:23 PM",
       ),
     
         ChatTile(
-            imageUrl:AssetsImage1.boyPic,
+            imageUrl:AssetsImage1.boyicon,
       name: "khaled",
       lastChat: "mvlkm dlksv LK",
       lastTime: "09:23 PM",
