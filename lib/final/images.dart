@@ -2,10 +2,12 @@ class AssetsImage1{
   static const iconsPath ="asset/icon";
   static const imagePath ="asset/image";
   static const svgPath="asset/svg";
-
-  static const boyicon ="$iconsPath/boy.jpg";
-  static const girlicon ="$iconsPath/girle.jpg";
-  static const appIcon="$imagePath/app.png";
+ static const defprofileURL="https://firebasestorage.googleapis.com/v0/b/chatx-f67e6.appspot.com/o/boy3.jpg?alt=media&token=e45c3ada-e0f2-4823-a963-d63b77347e6a";
+  static const boyicon ="https://firebasestorage.googleapis.com/v0/b/chatx-f67e6.appspot.com/o/boy3.jpg?alt=media&token=e45c3ada-e0f2-4823-a963-d63b77347e6a";
+ // static const defAppURL="https://firebasestorage.googleapis.com/v0/b/chatx-f67e6.appspot.com/o/4ca6e1cf-eaed-464c-875b-b52ac327609d.png?alt=media&token=3f247bf2-18b8-4611-b3e7-0f947d009d17";
+  //https://firebasestorage.googleapis.com/v0/b/chatx-f67e6.appspot.com/o/4ca6e1cf-eaed-464c-875b-b52ac327609d.png?alt=media&token=3f247bf2-18b8-4611-b3e7-0f947d009d17
+  // static const girlicon ="$iconsPath/girle.jpg";
+   static const appIcon="$imagePath/app.png";
  
   static const sendicon="$iconsPath/send.png";
   static const Galleryicon="$iconsPath/Gallery.jpg";

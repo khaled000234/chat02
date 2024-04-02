@@ -1,6 +1,7 @@
 import 'package:chat02/Auth/AuthPage.dart';
 import 'package:chat02/page/HomePage.dart';
 import 'package:chat02/page/chat/chatPage.dart';
+import 'package:chat02/page/pagesecond/ContactPage.dart';
 import 'package:chat02/page/pagesecond/LoginuserInfo.dart';
 import 'package:chat02/page/pagesecond/updateProfile.dart';
 import 'package:chat02/page/profilePage.dart';
@@ -23,6 +24,9 @@ var pagePath=[
   transition: Transition.rightToLeft
   ),
        GetPage(name: "/LoginUserInfo", page:()=>LoginUserInfo(),
+  transition: Transition.rightToLeft
+  ),
+      GetPage(name: "/ContactPage", page:()=>ContactPage(),
   transition: Transition.rightToLeft
   ),
 ];

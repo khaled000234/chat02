@@ -5,6 +5,7 @@ import 'package:chat02/page/pagesecond/ProfileController.dart';
 import 'package:chat02/page/pagesecond/chatTile.dart';
 import 'package:chat02/page/pagesecond/image.picker.dart';
 import 'package:chat02/page/pagesecond/mytabBar.dart';
+import 'package:chat02/page/profilePage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -40,10 +41,18 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             icon: Icon(Icons.search),
           ),
           IconButton(
-            onPressed: () {
-              Get.toNamed("/profilePage");
+            onPressed: ()async {
+              // Get.toNamed("/profilePage");
+            // await profileController.getUserDeatails();
+            Get.to(profilePage());
             },
             icon: Icon(Icons.more_vert_rounded),
+          ),
+           IconButton(
+            onPressed: (){
+            Get.toNamed("/ContactPage");
+            },
+            icon: Icon(Icons.save),
           ),
         ],
         bottom: MyTabBar(tabController, context),
@@ -73,13 +82,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ),
               ),
                  ChatTile(
-                imageUrl: AssetsImage1.girlicon,
+                imageUrl: AssetsImage1.boyicon,
                 name: "ssa",
                 lastChat: "bad me bat krte hai",
                 lastTime: "09:23 PM",
               ),
                   ChatTile(
-                imageUrl: AssetsImage1.appIcon,
+                imageUrl: AssetsImage1.boyicon,
                 name: "ssa",
                 lastChat: "bad me bat krte hai",
                 lastTime: "09:23 PM",

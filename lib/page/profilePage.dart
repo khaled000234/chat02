@@ -1,6 +1,7 @@
 
 import 'dart:io';
 
+import 'package:chat02/Auth/AuthController.dart';
 import 'package:chat02/page/pagesecond/Pbottom.dart';
 import 'package:chat02/page/pagesecond/ProfileController.dart';
 import 'package:chat02/page/pagesecond/image.picker.dart';
@@ -20,9 +21,15 @@ class profilePage extends StatelessWidget {
     TextEditingController about= TextEditingController(text:profileController.currentUser.value.about);
     ImagePickerController imagePickerController=Get.put(ImagePickerController());
     RxString imagePath="".obs;
+    AuthController authController= Get.put(AuthController());
     return Scaffold(
 appBar: AppBar(
   title: Text("profile"),
+  actions: [
+    IconButton(onPressed: (){
+      authController.logoutUser();
+    }, icon: Icon(Icons.logout)),
+  ],
 ),
 body:Padding(
   padding: const EdgeInsets.all(8.0),
@@ -75,7 +82,9 @@ body:Padding(
                       color: Theme.of(context).colorScheme.background,
                       borderRadius: BorderRadius.circular(100),
                     ),
-                    child: profileController.currentUser.value.profileImage ==""
+                    child: profileController.currentUser.value.profileImage == null 
+                    || profileController.currentUser.value.profileImage==""
+
                       ? Icon(Icons.image)
                       :ClipRRect(
                         borderRadius: BorderRadius.circular(100),
@@ -135,18 +144,19 @@ body:Padding(
                     ),),
                  // IconButton(onPressed: (){}, icon:Icon(Icons.edit))
                 SizedBox(height: 20,),
-
+              //   profileController.isLoading.value
+              //  ? CircularProgressIndicator():
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                Obx(() =>  isEdit.value 
+             Obx(() => isEdit.value 
                  ? Pbottom(BName:"save" ,ontap: ()async{
                                  await profileController.updateProfile(
                 imagePath.value, name.text, about.text, phone.text);
                       isEdit.value=false;
                   },): Pbottom(BName:"Edit" ,ontap: (){
                     isEdit.value=true;
-                  },),)
+                  },), )
                 ],
               ),
                  SizedBox(height: 20,),

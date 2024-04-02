@@ -26,9 +26,17 @@ class ChatTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row( children: [
-                    Image.asset(imageUrl,
-                width: 70,
-                ),
+                    Container(
+                      height: 70,
+                      width: 70,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(100),
+                        child: Image.network(imageUrl,
+                                        width: 70,
+                                        fit: BoxFit.cover,
+                                        ),
+                      ),
+                    ),
                 SizedBox(width: 10,),
               Column(
               crossAxisAlignment: CrossAxisAlignment.start,
