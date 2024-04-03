@@ -1,41 +1,43 @@
+import 'package:chat02/final/ChatModel.dart';
 import 'package:chat02/final/images.dart';
+import 'package:chat02/mode/ChatController.dart';
+import 'package:chat02/mode/Usermodel.dart';
 import 'package:chat02/page/chat/Chatbubble.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
+  final UserModel userModel;
+  const ChatPage({super.key, required this.userModel});
 
   @override
   Widget build(BuildContext context) {
+      ChatController chatController =Get.put(ChatController());
+      TextEditingController messageController =TextEditingController();
     return Scaffold(
       appBar: AppBar(
-        
-        
-        title:  Row(
+        leading:  Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child:  Image.asset(AssetsImage1.boyicon),
+        ),
+        title:  Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(AssetsImage1.boyicon, width: 50,),
-          SizedBox(width: 10,),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
            Text( 
-          "KHALED",
+          userModel.name ?? "User",
             style: Theme.of(context).textTheme.bodyLarge,),
           Text(
             "online",
             style: Theme.of(context).textTheme.bodySmall,
-          )
-          
-          ],
-          
           ),
-        
-         
-        ],
+          ],
       ),
         actions:[
-            IconButton(onPressed: (){}, icon:Icon(Icons.phone))
+            IconButton(onPressed: (){}, 
+            icon:Icon(Icons.phone)),
+              IconButton(onPressed: (){}, 
+            icon:Icon(Icons.video_call))
           ]),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
           floatingActionButton: Container(
@@ -59,29 +61,47 @@ class ChatPage extends StatelessWidget {
                 Expanded(
                   child: 
                   TextField(
-                  decoration: InputDecoration(
-                    filled: false,hintText: "type message"
+                    controller: messageController,
+                  decoration: const InputDecoration(
+                    filled: false,hintText: "type message ....."
                   ),
                 )),
                 SizedBox(width: 10,),
-                Container(
-                  width: 30,
-                  height: 30,
-                   
-                 child: SvgPicture.asset(AssetsImage1.gallerySVG,width: 25,),
-                 // SvgPicture.asset(AssetsImage1.sendSVG),
-                ),
                  Container(
-
-                  width: 30,
-                  height: 30,
-                  //child: Image.asset("asset/icon/send.png", width: 25,), 
-                  child: SvgPicture.asset(AssetsImage1.SendSVG,width: 25,),
+                    width: 30,
+                    height: 30,
+                   child: SvgPicture.asset(
+                    AssetsImage1.gallerySVG,width: 25,
+                    ),
+                   // SvgPicture.asset(AssetsImage1.sendSVG),
+                  ),
+                
+                 InkWell(
+                    onTap: (){
+                      // var newChat =ChatModel(
+                      
+                      // );
+                    // var newChat =ChatModel(
+                      ///////////////////////////////////////////////////////
+                      ////////////////////////////////////////////////////////////
+                    // );
+                    if (messageController.text.isNotEmpty) {
+                      chatController.sendMessage(
+                        userModel.id!,messageController.text);
+                          messageController.clear();
+                         
+                    
+                    }
+                  },
                   
-                  
-                )
-              
-           
+                   child: Container(
+                   
+                    width: 30,
+                    height: 30,
+                    //child: Image.asset("asset/icon/send.png", width: 25,), 
+                    child: SvgPicture.asset(AssetsImage1.SendSVG,width: 25,),
+                                   ),
+                 ),
               ],
             ),
           ),
@@ -89,13 +109,21 @@ class ChatPage extends StatelessWidget {
             padding: EdgeInsets.all(10),
             child: ListView(
               children: [
-       Chatbuble(
-        message: 'Hello how are you',
-         isComming: true,
-          time: '10:10',
-           status: 'read',
-            imageUrl: '',
-            ),
+     
+         
+          // if(messageController.text.isNotEmpty){
+          //   chatController.sendMessage(userModel.id!, messageController.text);
+          //   messageController.clear();
+          // }
+       
+          Chatbuble(
+          message: 'Hello how are you',
+           imageUrl: "",
+           isComming: true,
+            status: 'read',
+            time: '10:10',
+              ),
+       
               Chatbuble(
         message: 'Hello how are you',
          isComming: false,

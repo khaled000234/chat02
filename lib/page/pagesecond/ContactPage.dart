@@ -1,5 +1,7 @@
 import 'package:chat02/final/images.dart';
+import 'package:chat02/mode/ChatController.dart';
 import 'package:chat02/mode/ContactController.dart';
+import 'package:chat02/page/chat/chatPage.dart';
 import 'package:chat02/page/pagesecond/NewContactTitle.dart';
 import 'package:chat02/page/pagesecond/chatTile.dart';
 import 'package:chat02/page/pagesecond/contactSrech.dart';
@@ -13,6 +15,7 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     RxBool isSearchEnable=false.obs;
     ContractVontroller contractVontroller =Get.put(ContractVontroller());
+    ChatController chatController=Get.put(ChatController());
     return Scaffold(
       appBar: AppBar(
         title: Text("select contact"),
@@ -49,10 +52,14 @@ class ContactPage extends StatelessWidget {
                 children:contractVontroller.userList
                 .map((e) =>  InkWell(
                 onTap: (){
-                  //    Get.toNamed("/ChatPage");
+                  //    Get.toNamed("/ChatPage",arguments: e);
+              //   String roomID= chatController.getRoomId(e.id!);
+              //  print(roomID);
+               Get.to(ChatPage(userModel:e));
                 },
                 child: ChatTile(
-                  imageUrl: e.profileImage?? AssetsImage1.defprofileURL,
+                  imageUrl:
+                   e.profileImage?? AssetsImage1.defprofileURL,
                   name: e.name ?? "user" ,
                   lastChat: e.about?? "Hey there",
                   lastTime: "",

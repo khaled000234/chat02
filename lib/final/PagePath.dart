@@ -14,9 +14,9 @@ var pagePath=[
    GetPage(name: "/homepage", page:()=>HomePage(),
   transition: Transition.rightToLeft
   ),
-     GetPage(name: "/ChatPage", page:()=>ChatPage(),
-  transition: Transition.rightToLeft
-  ),
+  //    GetPage(name: "/ChatPage", page:()=>ChatPage(),
+  // transition: Transition.rightToLeft
+  // ),
      GetPage(name: "/profilePage", page:()=>profilePage(),
   transition: Transition.rightToLeft
   ),
