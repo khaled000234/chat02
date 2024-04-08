@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "1009918844737",
-    "project_id": "chatx-f67e6",
-    "storage_bucket": "chatx-f67e6.appspot.com"
+    "project_number": "162070281207",
+    "project_id": "chatx-ef78d",
+    "storage_bucket": "chatx-ef78d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1009918844737:android:2ebe97d67a5b0220718bc0",
+        "mobilesdk_app_id": "1:162070281207:android:74fb3201a64e294257ccf2",
         "android_client_info": {
           "package_name": "com.example.chat02"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCwPdDHXZlcB-INSt0cWpueQ9HRnjD4TMY"
+          "current_key": "AIzaSyBcNii2fIxZZeJLb158swrFxjUYdNeRbuk"
         }
       ],
       "services": {

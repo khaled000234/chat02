@@ -32,6 +32,8 @@ if (currentUserId[0].codeUnitAt(0)>targetUserId[0].codeUnitAt(0)) {
       message: message,
       senderId: auth.currentUser!.uid,
       receiverId: targetUserId,
+      senderName: controller.currentUser.value.name,
+      timestamp: DateTime.now().toString(),
       // senderName:controller.currentUser.value.name ,
     );
     try {
@@ -47,4 +49,25 @@ if (currentUserId[0].codeUnitAt(0)>targetUserId[0].codeUnitAt(0)) {
     } 
     isLoading.value=false;
   }
+
+
+
+
+Stream <List<ChatModel>>getMessage(String targetUserId){
+  String roomId =getRoomId(targetUserId);
+  return db 
+  .collection("Chats")
+  .doc(roomId).
+  collection("messages")
+  .orderBy("timestamp",descending: true)
+  .snapshots()
+  .map((snapshot)
+   => snapshot.docs
+  .map((doc) =>ChatModel.fromJson(doc.data()) )
+  .toList(),
+  );
+}
+
+
+
 }

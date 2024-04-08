@@ -29,5 +29,9 @@ var pagePath=[
       GetPage(name: "/ContactPage", page:()=>ContactPage(),
   transition: Transition.rightToLeft
   ),
+  
+
+  
 ];
 //LoginUserInfo
+ //

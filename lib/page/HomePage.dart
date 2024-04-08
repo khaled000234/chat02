@@ -1,5 +1,6 @@
 import 'package:chat02/final/String.dart';
 import 'package:chat02/final/images.dart';
+import 'package:chat02/page/chat/chatPage.dart';
 import 'package:chat02/page/chatList.dart';
 import 'package:chat02/page/pagesecond/ProfileController.dart';
 import 'package:chat02/page/pagesecond/chatTile.dart';
@@ -58,7 +59,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         bottom: MyTabBar(tabController, context),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+             Get.toNamed("/ContactPage");
+           // Get.to(ChatPage(userModel: userModel));
+        },
         backgroundColor: Theme.of(context).colorScheme.primary,
         child: Icon(
           Icons.add,

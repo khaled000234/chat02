@@ -3,9 +3,11 @@ import 'package:chat02/final/images.dart';
 import 'package:chat02/mode/ChatController.dart';
 import 'package:chat02/mode/Usermodel.dart';
 import 'package:chat02/page/chat/Chatbubble.dart';
+import 'package:chat02/page/pagesecond/ProfileController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class ChatPage extends StatelessWidget {
   final UserModel userModel;
@@ -15,6 +17,7 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
       ChatController chatController =Get.put(ChatController());
       TextEditingController messageController =TextEditingController();
+     ProfileController profileController = Get.put(ProfileController());
     return Scaffold(
       appBar: AppBar(
         leading:  Padding(
@@ -105,60 +108,56 @@ class ChatPage extends StatelessWidget {
               ],
             ),
           ),
-          body: Padding(
-            padding: EdgeInsets.all(10),
-            child: ListView(
-              children: [
-     
-         
-          // if(messageController.text.isNotEmpty){
-          //   chatController.sendMessage(userModel.id!, messageController.text);
-          //   messageController.clear();
-          // }
-       
-          Chatbuble(
-          message: 'Hello how are you',
-           imageUrl: "",
-           isComming: true,
-            status: 'read',
-            time: '10:10',
-              ),
-       
-              Chatbuble(
-        message: 'Hello how are you',
-         isComming: false,
-          time: '10:10',
-           status: 'read',
-            imageUrl: '',
+          body: 
+            
+            Padding(
+            padding: EdgeInsets.only(bottom: 70,top: 10,left: 10,right: 10),
+            child: StreamBuilder<List<ChatModel>>(
+              
+              stream:chatController.getMessage(userModel.id!) ,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+                if (snapshot.hasError) {
+                  return Center(
+                    child: Text("Error : ${snapshot.error}"),
+                  );
+                 
+                }
+                if (snapshot.data == null) {
+                  return  Center(
+                  child:   Text("no message")
+                  );
+                }
+                else{
+                  return ListView.builder(
+                    reverse: true,
+                    itemCount: snapshot.data!.length,
+                    itemBuilder:(context,index){
+                      DateTime timestamp=
+                DateTime.parse(snapshot.data![index].timestamp!);
+                String formattedTime =DateFormat('hh:mm a')
+                .format(timestamp);
+                 return Chatbuble(
+                  message: snapshot.data![index].message!,
+                  imageUrl: snapshot.data![index].imageUrl ??"",
+                 isComming: 
+                snapshot.data![index]
+                   .receiverId == profileController.currentUser.value.id,
+                  status: "read",
+                  time: formattedTime,
+                
+                  
+                    );
+                    } 
+                  );
+                }
+              },
+              )
             ),
-               Chatbuble(
-        message: 'Hello how are you',
-         isComming: true,
-          time: '10:10',
-           status: 'read',
-            imageUrl: '',
-            ),
-               Chatbuble(
-        message: 'Hello how are you ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccchhhhhhhhhhhhhhhhhhhh',
-         isComming: false,
-          time: '10:10',
-           status: 'read',
-            imageUrl: 'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-            ),
-            ]),
-          ),
     );
   }
 }
-
-
-
-
-
-
-
-// import 'package:firebase_core/firebase_core.dart';
-// import 'firebase_options.dart';
-
-// // ...
-

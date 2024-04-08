@@ -2,8 +2,8 @@ class AssetsImage1{
   static const iconsPath ="asset/icon";
   static const imagePath ="asset/image";
   static const svgPath="asset/svg";
- static const defprofileURL="https://firebasestorage.googleapis.com/v0/b/chatx-f67e6.appspot.com/o/boy3.jpg?alt=media&token=e45c3ada-e0f2-4823-a963-d63b77347e6a";
-  static const boyicon ="https://firebasestorage.googleapis.com/v0/b/chatx-f67e6.appspot.com/o/boy3.jpg?alt=media&token=e45c3ada-e0f2-4823-a963-d63b77347e6a";
+ static const defprofileURL="https://firebasestorage.googleapis.com/v0/b/chatx-ef78d.appspot.com/o/boy.jpg?alt=media&token=f799f2ea-5283-4fce-8f78-bf618d22b15c";
+  static const boyicon ="https://firebasestorage.googleapis.com/v0/b/chatx-ef78d.appspot.com/o/boy.jpg?alt=media&token=f799f2ea-5283-4fce-8f78-bf618d22b15c";
  // static const defAppURL="https://firebasestorage.googleapis.com/v0/b/chatx-f67e6.appspot.com/o/4ca6e1cf-eaed-464c-875b-b52ac327609d.png?alt=media&token=3f247bf2-18b8-4611-b3e7-0f947d009d17";
   //https://firebasestorage.googleapis.com/v0/b/chatx-f67e6.appspot.com/o/4ca6e1cf-eaed-464c-875b-b52ac327609d.png?alt=media&token=3f247bf2-18b8-4611-b3e7-0f947d009d17
   // static const girlicon ="$iconsPath/girle.jpg";
